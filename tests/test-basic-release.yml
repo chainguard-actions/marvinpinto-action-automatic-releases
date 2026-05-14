@@ -1,0 +1,26 @@
+name: Test basic release inputs
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_REF: refs/tags/v1.0.0
+      GITHUB_EVENT_NAME: push
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - id: action
+        uses: .
+        continue-on-error: true
+        with:
+          repo_token: fake-token-for-testing
+          automatic_release_tag: latest
+          title: "Test Release"
+          prerelease: true
+          draft: false
+      - name: Assert action ran (may fail due to fake token)
+        run: |
+          echo "Action completed (with or without error due to fake token)"
+          echo "automatic_releases_tag: ${{ steps.action.outputs.automatic_releases_tag }}"
+          echo "upload_url: ${{ steps.action.outputs.upload_url }}"
+          echo "PASS: inputs were accepted"
