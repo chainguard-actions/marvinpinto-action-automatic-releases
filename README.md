@@ -8,6 +8,7 @@ Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at
 
 | Version | Tag | Upstream commit |
 |---------|-----|-----------------|
+| latest | [`latest`](https://github.com/chainguard-actions/marvinpinto-action-automatic-releases/tree/latest) | — |
 | v1.1.1 | [`v1.1.1`](https://github.com/chainguard-actions/marvinpinto-action-automatic-releases/tree/v1.1.1) | — |
 | v1.1.2 | [`v1.1.2`](https://github.com/chainguard-actions/marvinpinto-action-automatic-releases/tree/v1.1.2) | — |
 | v1.2.0 | [`v1.2.0`](https://github.com/chainguard-actions/marvinpinto-action-automatic-releases/tree/v1.2.0) | — |
