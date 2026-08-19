@@ -10,7 +10,7 @@ Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at
 |---------|-----|-----------------|
 | latest | [`latest`](https://github.com/chainguard-actions/marvinpinto-action-automatic-releases/tree/latest) | — |
 | v1.1.1 | [`v1.1.1`](https://github.com/chainguard-actions/marvinpinto-action-automatic-releases/tree/v1.1.1) | [`1369002`](https://github.com/marvinpinto/action-automatic-releases/commit/1369002240ebd4f758bbc69e9ae3649a5c3c2e14) |
-| v1.1.2 | [`v1.1.2`](https://github.com/chainguard-actions/marvinpinto-action-automatic-releases/tree/v1.1.2) | — |
+| v1.1.2 | [`v1.1.2`](https://github.com/chainguard-actions/marvinpinto-action-automatic-releases/tree/v1.1.2) | [`4951e72`](https://github.com/marvinpinto/action-automatic-releases/commit/4951e72708bd9a79dce9d5c81425b028a7ab407b) |
 | v1.2.0 | [`v1.2.0`](https://github.com/chainguard-actions/marvinpinto-action-automatic-releases/tree/v1.2.0) | — |
 | v1.2.1 | [`v1.2.1`](https://github.com/chainguard-actions/marvinpinto-action-automatic-releases/tree/v1.2.1) | — |
 
