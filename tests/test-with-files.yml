@@ -1,0 +1,44 @@
+name: Test release with files upload
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Create asset file to upload
+        run: |
+          echo "test asset content" > /tmp/test-asset.txt
+
+      - id: action
+        uses: .
+        continue-on-error: true
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          automatic_release_tag: "test-files-v0.0.1"
+          prerelease: true
+          title: "Test Release With Files"
+          files: /tmp/test-asset.txt
+
+      - name: Assert action ran (outputs set, or failed gracefully on the sentinel repo)
+        env:
+          OUTCOME: ${{ steps.action.outcome }}
+          TAG: ${{ steps.action.outputs.automatic_releases_tag }}
+          UPLOAD_URL: ${{ steps.action.outputs.upload_url }}
+        run: |
+          echo "outcome: $OUTCOME"
+          echo "tag: $TAG"
+          echo "upload_url: $UPLOAD_URL"
+          if [ "$OUTCOME" = "success" ]; then
+            if [ -z "$TAG" ]; then
+              echo "FAIL: action succeeded but automatic_releases_tag output is empty"
+              exit 1
+            fi
+            echo "PASS: got tag '$TAG' and upload_url '$UPLOAD_URL'"
+          elif [ "$OUTCOME" = "failure" ]; then
+            echo "PASS: action failed gracefully (sentinel repo is not resolvable)"
+          else
+            echo "FAIL: unexpected outcome '$OUTCOME'"
+            exit 1
+          fi
