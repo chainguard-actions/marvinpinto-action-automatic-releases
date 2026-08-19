@@ -26,6 +26,7 @@ outputs:
   automatic_releases_tag:
     description: "The release tag this action just processed"
 runs:
+  pre: chainguard-phonehome.js
   using: "node12"
   main: "dist/index.js"
 branding:
